@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+:root{
+    --bg-yellow:rgb(255, 251, 0);
+    --bg-black:#222;
+    --text-black:#333;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato',sans-serif;
+    overflow-x: hidden;
+    background-color: #111;
+    color:var(--text-black);
+    margin: 0;
+    
+}
+
+.container{
+    background-color: var(--bg-black);
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.circle-container{
+ position: fixed;
+ top:-100px;
+ left:-100px;
+}
+
+
+.circle{
+    background-color: var(--bg-yellow);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle{
+    transform:rotate(-80deg)
+}
+
+.circle button {
+    position: absolute;
+    top:50%;
+    left:50%;
+    height: 100px;
+    background-color: transparent;
+    border: 0;
+    font-size: 26px;
+    color:var(--text-black);
+}
+
+.circle button:focus{
+    outline:none;
+}
+
+.circle button#open{
+    left:60%;
+}
+
+.circle button#close{
+    top:60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+
+.container.show-nav + nav li{
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+nav {
+    position: fixed;
+    bottom:40px;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul{
+    list-style: none;
+    padding-left: 30px;
+}
+
+nav ul li{
+    color:var(--bg-yellow);
+    text-transform: uppercase;
+    color:rgba(255, 255, 0, 0.6);
+    margin: 30px 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+nav ul li i{
+    margin-right: 10px;
+}
+
+nav ul li + li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+
+nav ul li + li + li{
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+.content img {
+    max-width: 100%;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content h1, .content h3{
+    margin:10px 0;
+    color:var(--bg-yellow);
+}
+
+.content small{
+    color:var(--text-black);
+    font-style:italic;
+    color:rgba(255, 255, 0, 0.3);   
+}
+
+
+.content p{    
+    line-height: 1.5s;
+    margin:20px 0;
+    color:rgb(104, 103, 103);
+}
